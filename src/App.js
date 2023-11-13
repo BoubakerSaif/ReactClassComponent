@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import "./App.css";
+import Profile from "./Components/Profile";
+import products from "./Product";
 function App() {
+  const [show, setShow] = useState(false);
+  const [name, setName] = useState("Ali");
+  const [userInfo, setUserInfo] = useState({
+    name: "Ali",
+    age: 20,
+    Profession: "Student",
+  });
+
+  console.log(products);
+  const showHandler = () => {
+    setShow(!show);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hello
+      <Profile />
     </div>
   );
 }
